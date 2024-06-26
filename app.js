@@ -13,6 +13,9 @@ dotenv.config({
 app.use(cors({origin:process.env.CLIENT_URL,credentials:true}))
 app.use(express.json());
 app.use(cookieParser());
+app.get("/",(req,res)=>{
+    res.send("welcome to the world")
+})
 app.use('/api/v1/posts',postRoute)
 app.use('/api/v1/auth',authRoute)
 app.use('/api/v1/test',testRoute)
